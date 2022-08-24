@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "vnJduDUJJVbJNERUIczyunkTyYQ3aHnYOXiwmL9Nh+iQIFX8LTFbZQ+pDeIIqxKn1hF9WBoCc01MwpFf+V7Low==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\wacho\\source\\repos\\FinalnaWersjaPray\\BoardGameRentalApp\\BoardGameRentalApp\\BoardGameRentalApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\wacho\\.nuget\\packages\\dotnetprojects.wpftoolkit.input\\6.1.94\\dotnetprojects.wpftoolkit.input.6.1.94.nupkg.sha512"
+  ],
+  "logs": []
+}

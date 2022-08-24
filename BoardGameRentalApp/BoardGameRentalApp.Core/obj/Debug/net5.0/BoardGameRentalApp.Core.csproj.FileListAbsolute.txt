@@ -1,0 +1,12 @@
+C:\Users\wacho\source\repos\FinalnaWersjaPray\BoardGameRentalApp\BoardGameRentalApp.Core\bin\Debug\net5.0\BoardGameRentalApp.Core.deps.json
+C:\Users\wacho\source\repos\FinalnaWersjaPray\BoardGameRentalApp\BoardGameRentalApp.Core\bin\Debug\net5.0\BoardGameRentalApp.Core.dll
+C:\Users\wacho\source\repos\FinalnaWersjaPray\BoardGameRentalApp\BoardGameRentalApp.Core\bin\Debug\net5.0\ref\BoardGameRentalApp.Core.dll
+C:\Users\wacho\source\repos\FinalnaWersjaPray\BoardGameRentalApp\BoardGameRentalApp.Core\bin\Debug\net5.0\BoardGameRentalApp.Core.pdb
+C:\Users\wacho\source\repos\FinalnaWersjaPray\BoardGameRentalApp\BoardGameRentalApp.Core\obj\Debug\net5.0\BoardGameRentalApp.Core.csproj.AssemblyReference.cache
+C:\Users\wacho\source\repos\FinalnaWersjaPray\BoardGameRentalApp\BoardGameRentalApp.Core\obj\Debug\net5.0\BoardGameRentalApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wacho\source\repos\FinalnaWersjaPray\BoardGameRentalApp\BoardGameRentalApp.Core\obj\Debug\net5.0\BoardGameRentalApp.Core.AssemblyInfoInputs.cache
+C:\Users\wacho\source\repos\FinalnaWersjaPray\BoardGameRentalApp\BoardGameRentalApp.Core\obj\Debug\net5.0\BoardGameRentalApp.Core.AssemblyInfo.cs
+C:\Users\wacho\source\repos\FinalnaWersjaPray\BoardGameRentalApp\BoardGameRentalApp.Core\obj\Debug\net5.0\BoardGameRentalApp.Core.csproj.CoreCompileInputs.cache
+C:\Users\wacho\source\repos\FinalnaWersjaPray\BoardGameRentalApp\BoardGameRentalApp.Core\obj\Debug\net5.0\BoardGameRentalApp.Core.dll
+C:\Users\wacho\source\repos\FinalnaWersjaPray\BoardGameRentalApp\BoardGameRentalApp.Core\obj\Debug\net5.0\ref\BoardGameRentalApp.Core.dll
+C:\Users\wacho\source\repos\FinalnaWersjaPray\BoardGameRentalApp\BoardGameRentalApp.Core\obj\Debug\net5.0\BoardGameRentalApp.Core.pdb

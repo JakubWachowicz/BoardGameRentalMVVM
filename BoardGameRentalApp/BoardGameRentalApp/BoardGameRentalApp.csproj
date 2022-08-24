@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Boardgames.png" />
+    <None Remove="Images\Rentals.png" />
+    <None Remove="Images\Users.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNetProjects.WpfToolkit.Input" Version="6.1.94" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BoardGameRentalApp.Core\BoardGameRentalApp.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Boardgames.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Rentals.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Users.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controls\" />
+  </ItemGroup>
+
+</Project>

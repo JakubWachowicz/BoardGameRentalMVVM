@@ -1,0 +1,131 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0-windows7.0": {
+      "DotNetProjects.WpfToolkit.Input/6.1.94": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0-windows7.0/DotNetProjects.Input.Toolkit.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/DotNetProjects.Input.Toolkit.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "BoardGameRentalApp.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/BoardGameRentalApp.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BoardGameRentalApp.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DotNetProjects.WpfToolkit.Input/6.1.94": {
+      "sha512": "0YcVgMwcytYzhGeIlOTs/5cmbobEa5AdL3vGONiqcScDTXwn5HL7tzIiHAsnPXuy9h+rOFtxuvod2jiRXC6tgQ==",
+      "type": "package",
+      "path": "dotnetprojects.wpftoolkit.input/6.1.94",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dotnetprojects.wpftoolkit.input.6.1.94.nupkg.sha512",
+        "dotnetprojects.wpftoolkit.input.nuspec",
+        "lib/net40/DotNetProjects.Input.Toolkit.dll",
+        "lib/net5.0-windows7.0/DotNetProjects.Input.Toolkit.dll",
+        "lib/net6.0-windows7.0/DotNetProjects.Input.Toolkit.dll"
+      ]
+    },
+    "BoardGameRentalApp.Core/1.0.0": {
+      "type": "project",
+      "path": "../BoardGameRentalApp.Core/BoardGameRentalApp.Core.csproj",
+      "msbuildProject": "../BoardGameRentalApp.Core/BoardGameRentalApp.Core.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0-windows7.0": [
+      "BoardGameRentalApp.Core >= 1.0.0",
+      "DotNetProjects.WpfToolkit.Input >= 6.1.94"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\wacho\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\wacho\\source\\repos\\FinalnaWersjaPray\\BoardGameRentalApp\\BoardGameRentalApp\\BoardGameRentalApp.csproj",
+      "projectName": "BoardGameRentalApp",
+      "projectPath": "C:\\Users\\wacho\\source\\repos\\FinalnaWersjaPray\\BoardGameRentalApp\\BoardGameRentalApp\\BoardGameRentalApp.csproj",
+      "packagesPath": "C:\\Users\\wacho\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\wacho\\source\\repos\\FinalnaWersjaPray\\BoardGameRentalApp\\BoardGameRentalApp\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\wacho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0-windows7.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "projectReferences": {
+            "C:\\Users\\wacho\\source\\repos\\FinalnaWersjaPray\\BoardGameRentalApp\\BoardGameRentalApp.Core\\BoardGameRentalApp.Core.csproj": {
+              "projectPath": "C:\\Users\\wacho\\source\\repos\\FinalnaWersjaPray\\BoardGameRentalApp\\BoardGameRentalApp.Core\\BoardGameRentalApp.Core.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0-windows7.0": {
+        "targetAlias": "net5.0-windows",
+        "dependencies": {
+          "DotNetProjects.WpfToolkit.Input": {
+            "target": "Package",
+            "version": "[6.1.94, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
