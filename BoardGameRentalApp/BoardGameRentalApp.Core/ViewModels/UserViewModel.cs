@@ -1,5 +1,5 @@
 ﻿using BoardGameRentalApp.Core.Models;
-using BoardGameRentallApp.Core.ViewModels;
+using BoardGameRentalApp.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +12,7 @@ namespace BoardGameRentalApp.Core.ViewModels
     {
         private readonly UserModel _userModel;
         public string UserName => _userModel.UserName;
-        public string UserId => _userModel.UserId;
+        public Guid UserId => _userModel.UserId;
         public bool IsSelected { get; set; }
 
         public override string ToString()

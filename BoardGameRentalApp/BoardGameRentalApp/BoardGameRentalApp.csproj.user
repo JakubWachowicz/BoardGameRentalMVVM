@@ -16,12 +16,21 @@
     <Compile Update="Views\ListOfUserView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\NavigationBarView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\ButtonDefoultStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\GridStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\TextBlockStyle.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Themes\Generic.xaml">
@@ -34,6 +43,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ListOfUserView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\NavigationBarView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

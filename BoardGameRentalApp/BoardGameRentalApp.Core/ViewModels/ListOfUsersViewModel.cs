@@ -1,8 +1,9 @@
 ﻿using BoardGameRentalApp.Core.Commands;
 using BoardGameRentalApp.Core.Models;
 using BoardGameRentalApp.Core.Stores;
-using BoardGameRentallApp.Core.Commands;
-using BoardGameRentallApp.Core.ViewModels;
+using BoardGameRentalApp.Core.ViewModels.Controls;
+using BoardGameRentalApp.Core.Commands;
+using BoardGameRentalApp.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,7 +20,8 @@ namespace BoardGameRentalApp.Core.ViewModels
         private readonly BoardGameRentalViewModel _boardGameRentalViewModel;
         private string _userName = "";
         private string _userId = "";
-
+        public NavigationBarViewModel NavigationBarViewModel;
+        private BoardGameRentalStore _boardGameRentalStore;
         public string UserName
         {
             get
@@ -50,16 +52,29 @@ namespace BoardGameRentalApp.Core.ViewModels
         public ICommand ChangeToBoardGamesView { get; set; }
         public ICommand ChangeToUsersView { get; set; }
         public ICommand ChangeToRentalsView { get; set; }
-        public ListOfUsersViewModel(NavigationStore navigationStore,BoardGameRentalViewModel boardGameRental)
+        public ListOfUsersViewModel(NavigationStore navigationStore,BoardGameRentalViewModel boardGameRental,BoardGameRentalStore boardGameRentalStore)
         {
-            _boardGameRentalViewModel = boardGameRental;
-            AddNewUser = new AddNewUserCommand(AddNewUse, AddNewUserCanExecute, this);
-            DeleteUser = new CommandBase(DeleteSelectedUsers);
-            ChangeToBoardGamesView = new NavigateBoardGameListCommand(navigationStore, boardGameRental);
-            ChangeToRentalsView = new NavigateRentalListCommand(navigationStore, _boardGameRentalViewModel);
 
+           
+            _boardGameRentalViewModel = boardGameRental;
+            AddNewUser = new AddNewUserCommand(AddNewUserCanExecute, boardGameRentalStore,this);
+            DeleteUser = new DeleteUserCommand(this, boardGameRentalStore);
+            //foreach (var d in boardGameRentalStore.UserAdded.G)
+            //{
+            //    FindClicked -= (FindClickedHandler)d;
+            //}
+            boardGameRentalStore.ResetSubscriptions();
+            
+            boardGameRentalStore.UserAdded += OnUserAdded;
+            ChangeToBoardGamesView = new NavigateBoardGameListCommand(navigationStore, boardGameRental,boardGameRentalStore);
+            ChangeToRentalsView = new NavigateBoardGamesCommand(navigationStore, boardGameRental,boardGameRentalStore);
+            NavigationBarViewModel = new NavigationBarViewModel(navigationStore, boardGameRental,boardGameRentalStore);
+            _boardGameRentalStore = boardGameRentalStore;
+            UpdateListOfUsers(boardGameRentalStore._users);
 
         }
+
+        
 
         public void DeleteSelectedUsers()
         {
@@ -73,23 +88,31 @@ namespace BoardGameRentalApp.Core.ViewModels
 
         }
 
+        private void OnUserAdded(UserModel reservation)
+        {
+            var reservationViewModel = new UserViewModel(reservation);
+            usersList.Add(reservationViewModel);
+        }
+
+
 
         public bool AddNewUserCanExecute()
         {
             return !(UserName.Trim() == string.Empty || UserId.Trim() == string.Empty);
         }
 
-        public void AddNewUse()
+        
+        public void UpdateListOfUsers(IEnumerable<UserModel> users)
         {
-            UserViewModel NewUser = new UserViewModel(new UserModel(UserId, UserName));
-            usersList.Add(NewUser);
+            usersList.Clear();
 
-
-            UserId = string.Empty;
-            UserName = string.Empty;
-            OnPropertChanged(nameof(UserName));
-            OnPropertChanged(nameof(UserId));
+            foreach (UserModel user in users)
+            {
+                UserViewModel newUser = new UserViewModel(user);
+                usersList.Add(newUser);
+            }
         }
+        
     }
 
 }

@@ -1,5 +1,5 @@
 ﻿using BoardGameRentalApp.Core.Models;
-using BoardGameRentallApp.Core.ViewModels;
+using BoardGameRentalApp.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +12,7 @@ namespace BoardGameRentalApp.Core.ViewModels
     {
 
 
-        public string UserId => _rentalModel.UserId;
+        public Guid UserId => _rentalModel.UserId;
         public string BoardGameName => _rentalModel.BoardGameName;
         public string UserName => _rentalModel.UserName;
         public DateTime rentalDate => _rentalModel.rentalDate;

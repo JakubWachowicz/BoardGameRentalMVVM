@@ -1,6 +1,8 @@
 ﻿using BoardGameRentalApp.Core;
+using BoardGameRentalApp.Core.Models;
+using BoardGameRentalApp.Core.Stores;
 using BoardGameRentalApp.Core.ViewModels;
-using BoardGameRentallApp.Core.ViewModels;
+using BoardGameRentalApp.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,28 +10,52 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BoardGameRentallApp.Core.Commands
+namespace BoardGameRentalApp.Core.Commands
 {
-    class AddNewUserCommand:CommandBase
+    class AddNewUserCommand: AsyncCommandBase
     {
-        public Action MyAction;
+       
         public Func<bool> CanExecuteEvent;
         public ListOfUsersViewModel AddNewUserPageViewModel;
+        public BoardGameRentalStore boardGameRentalStore;
 
 
-        public AddNewUserCommand(Action myAction, Func<bool> canExecuteEvent, ListOfUsersViewModel addNewUserPageViewModel) : base(myAction)
+        public AddNewUserCommand(Func<bool> canExecuteEvent, BoardGameRentalStore boardGameRentalStore, ListOfUsersViewModel addNewUserPageViewModel) 
         {
-            MyAction = myAction;
+            this.boardGameRentalStore = boardGameRentalStore;
             CanExecuteEvent = canExecuteEvent;
             AddNewUserPageViewModel = addNewUserPageViewModel;
             AddNewUserPageViewModel.PropertyChanged += OnTextBoxChange;
 
         }
-
-        public override void Execute(object parameter)
+        public override async void Execute(object parameter)
         {
-            MyAction.Invoke();
+            try
+            {
+                IsExecuting = true;
+                await ExecuteAsync(parameter);
+            }
+            finally
+            {
+                IsExecuting = false;
+            }
+
         }
+
+        public override async Task ExecuteAsync(object parameter)
+        {
+            Guid g = Guid.NewGuid();
+            UserModel NewBoardGame = new UserModel(g, AddNewUserPageViewModel.UserName);
+            //BoardGameList.Add(NewBoardGame);
+            // await ViewModelBase._boardGameRentalViewModel.boardGameRental.AddBoardGameAsync(new BoardGameModel(ViewModelBase.Genre, ViewModelBase.BoardGameName));
+            await boardGameRentalStore.AddUser(NewBoardGame);
+            AddNewUserPageViewModel.OnPropertChanged(nameof(AddNewUserPageViewModel.usersList));
+
+            AddNewUserPageViewModel.UserName = string.Empty;
+            AddNewUserPageViewModel.OnPropertChanged(nameof(AddNewUserPageViewModel.UserName));
+            
+        }
+      
         public override bool CanExecute(object parameter)
         {
             return CanExecuteEvent.Invoke();

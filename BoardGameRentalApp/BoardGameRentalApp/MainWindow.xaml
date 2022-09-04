@@ -6,9 +6,10 @@
         xmlns:local="clr-namespace:BoardGameRentalApp.Views"
         xmlns:views="clr-namespace:BoardGameRentalApp.Views"
         xmlns:vms="clr-namespace:BoardGameRentalApp.Core.ViewModels;assembly=BoardGameRentalApp.Core"
+        xmlns:vmsC="clr-namespace:BoardGameRentalApp.Core.ViewModels.Controls;assembly=BoardGameRentalApp.Core"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800">
-
+   
     <ContentControl Content="{Binding CurrentViewModel}">
         <ContentControl.Resources>
             <DataTemplate DataType="{x:Type vms:ListOfBoardGamesViewModel}">
@@ -19,6 +20,9 @@
             </DataTemplate>
             <DataTemplate DataType="{x:Type vms:ListOfRentalsViewModel}">
                 <views:ListOfRentalsView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmsC:NavigationBarViewModel}">
+                <views:NavigationBarView/>
             </DataTemplate>
         </ContentControl.Resources>
     </ContentControl>

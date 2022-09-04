@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BoardGameRentalApp.Core.Commands
 {
-    public class AddNewRentalCommand : CommandBase
+    public class AddNewRentalCommand : Core.AsyncCommandBase
     {
         public Action MyAction;
         public Func<bool> CanExecuteEvent;

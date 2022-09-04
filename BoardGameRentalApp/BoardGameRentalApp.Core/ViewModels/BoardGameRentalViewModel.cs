@@ -1,5 +1,6 @@
 ﻿using BoardGameRentalApp.Core.Models;
-using BoardGameRentallApp.Core.ViewModels;
+using BoardGameRentalApp.Core.ViewModels.Controls;
+using BoardGameRentalApp.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,6 +17,7 @@ namespace BoardGameRentalApp.Core.ViewModels
         public ObservableCollection<RentalViewModel> rentalList => boardGameRental.RentalList;
 
         public BoardGameRentalModel boardGameRental;
+       
 
         public BoardGameRentalViewModel(BoardGameRentalModel boardGameRental)
         {

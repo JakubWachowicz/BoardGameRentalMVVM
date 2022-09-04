@@ -1,7 +1,8 @@
 ﻿using BoardGameRentalApp.Core.Commands;
 using BoardGameRentalApp.Core.Models;
 using BoardGameRentalApp.Core.Stores;
-using BoardGameRentallApp.Core.ViewModels;
+using BoardGameRentalApp.Core.ViewModels.Controls;
+using BoardGameRentalApp.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,10 +16,11 @@ namespace BoardGameRentalApp.Core.ViewModels
     public class ListOfRentalsViewModel : ViewModelBase
     {
         public ObservableCollection<RentalViewModel> rentalList => _boardGameRentalViewModel.rentalList;
-        public ObservableCollection<BoardGameViewModel> boardGameList => _boardGameRentalViewModel.boardGamesList;
+        private readonly ObservableCollection<BoardGameViewModel> _boardgamesList = new ObservableCollection<BoardGameViewModel>();
+        public ObservableCollection<BoardGameViewModel> boardGameList => _boardgamesList;
         public ObservableCollection<UserViewModel> userList => _boardGameRentalViewModel.userViewList;
         private readonly BoardGameRentalViewModel _boardGameRentalViewModel;
-
+        public NavigationBarViewModel NavigationBarViewModel;
         public ICommand ChangeToBoardGamesView { get; set; }
         public ICommand ChangeToUsersView { get; set; }
         public ICommand ChangeToRentalsView { get; set; }
@@ -50,12 +52,20 @@ namespace BoardGameRentalApp.Core.ViewModels
         }
 
         public ICommand AddNewRental { get; set; }
-        public ListOfRentalsViewModel(NavigationStore navigationStore,BoardGameRentalViewModel boardGameRentalViewModel)
+        
+        public ListOfRentalsViewModel(NavigationStore navigationStore,BoardGameRentalViewModel boardGameRentalViewModel,BoardGameRentalStore boardGameRentalStore)
         {
-            _boardGameRentalViewModel = boardGameRentalViewModel;
-            ChangeToBoardGamesView = new NavigateBoardGameListCommand(navigationStore, boardGameRentalViewModel);
-            ChangeToUsersView = new NavigateUserListCommand(navigationStore, boardGameRentalViewModel);
+            
+
+            _boardGameRentalViewModel = boardGameRentalViewModel ;
+            ChangeToBoardGamesView = new NavigateBoardGameListCommand(navigationStore, boardGameRentalViewModel, boardGameRentalStore);
+            ChangeToUsersView = new NavigateUserListCommand(navigationStore, boardGameRentalViewModel, boardGameRentalStore);
             AddNewRental = new AddNewRentalCommand(AddRental, AddNewRentalCanExecute,this);
+            ChangeToRentalsView = new NavigateBoardGamesCommand(navigationStore, boardGameRentalViewModel, boardGameRentalStore);
+
+            
+            UpdateListOfBoardGames(boardGameRentalStore._boardGames);
+
 
 
         }
@@ -73,6 +83,17 @@ namespace BoardGameRentalApp.Core.ViewModels
             SelecteduserViewModel = default;
             OnPropertChanged(nameof(SelectedBoardGame));
             OnPropertChanged(nameof(SelecteduserViewModel));
+        }
+
+        public void UpdateListOfBoardGames(IEnumerable<BoardGameModel> boardgames)
+        {
+            boardGameList.Clear();
+
+            foreach (BoardGameModel boardgame in boardgames)
+            {
+                BoardGameViewModel newBoardGame = new BoardGameViewModel(boardgame);
+                boardGameList.Add(newBoardGame);
+            }
         }
     }
 }

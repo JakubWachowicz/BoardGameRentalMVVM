@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="#E4DFDA">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="50"/>
+             <ColumnDefinition Width="230"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
@@ -83,19 +83,8 @@
 
 
         </StackPanel>
-        <StackPanel Background="Black" Grid.Row="1" Grid.RowSpan="2">
-            <Button Style="{StaticResource SideButtonTheme}" Command="{Binding ChangeToRentalsView}" Height="30" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top">
-                <Image Source ="../Images/Rentals.png"/>
-            </Button>
-            <Button  Style="{StaticResource SideButtonTheme}" Command="{Binding ChangeToUsersView}" Height="30" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top">
-                <Image Source ="../Images/Users.png"/>
-            </Button>
-            <Button  Style="{StaticResource SideButtonTheme}" Command="{Binding ChangeToBoardGamesView}" Height="30" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top">
-                <Image Source ="pack://application:,,,/Images/Boardgames.png"/>
-            </Button>
-            <Button  Style="{StaticResource SideButtonTheme}"  Height="30" Width="50" HorizontalAlignment="Left" Margin="0 0 0 0" VerticalAlignment="Bottom">
-                <Image />
-            </Button>
+        <StackPanel Background="#2F4858" Grid.Row="0" Grid.RowSpan="4" >
+            <local:NavigationBarView />
         </StackPanel>
 
     </Grid>

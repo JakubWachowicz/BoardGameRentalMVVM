@@ -20,7 +20,7 @@ namespace BoardGameRentalApp.Core.Models
             this.rentalDate = rentalDate;
         }
 
-        public string UserId  => _userModel.UserId;
+        public Guid UserId  => _userModel.UserId;
         public string UserName => _userModel.UserName;
         public string BoardGameName => _boardGameModel.BoardGameName;
 

@@ -10,3 +10,6 @@ C:\Users\wacho\source\repos\FinalnaWersjaPray\BoardGameRentalApp\BoardGameRental
 C:\Users\wacho\source\repos\FinalnaWersjaPray\BoardGameRentalApp\BoardGameRentalApp.Core\obj\Debug\net5.0\BoardGameRentalApp.Core.dll
 C:\Users\wacho\source\repos\FinalnaWersjaPray\BoardGameRentalApp\BoardGameRentalApp.Core\obj\Debug\net5.0\ref\BoardGameRentalApp.Core.dll
 C:\Users\wacho\source\repos\FinalnaWersjaPray\BoardGameRentalApp\BoardGameRentalApp.Core\obj\Debug\net5.0\BoardGameRentalApp.Core.pdb
+C:\Users\wacho\source\repos\FinalnaWersjaPray\BoardGameRentalApp\BoardGameRentalApp.Core\bin\Debug\net5.0\BoardGameRentalApp.Core.runtimeconfig.json
+C:\Users\wacho\source\repos\FinalnaWersjaPray\BoardGameRentalApp\BoardGameRentalApp.Core\bin\Debug\net5.0\BoardGameRentalApp.Core.runtimeconfig.dev.json
+C:\Users\wacho\source\repos\FinalnaWersjaPray\BoardGameRentalApp\BoardGameRentalApp.Core\obj\Debug\net5.0\BoardGameRentalApp.Core.genruntimeconfig.cache

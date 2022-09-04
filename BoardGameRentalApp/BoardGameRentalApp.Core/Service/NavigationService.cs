@@ -1,6 +1,6 @@
 ﻿
 using BoardGameRentalApp.Core.Stores;
-using BoardGameRentallApp.Core.ViewModels;
+using BoardGameRentalApp.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

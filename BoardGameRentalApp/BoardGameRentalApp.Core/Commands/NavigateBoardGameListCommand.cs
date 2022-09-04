@@ -9,19 +9,21 @@ using System.Windows.Input;
 
 namespace BoardGameRentalApp.Core.Commands
 {
-    class NavigateBoardGameListCommand:CommandBase
+    class NavigateBoardGameListCommand: Core.AsyncCommandBase
     {
         private readonly NavigationStore _navigationStore;
         private readonly BoardGameRentalViewModel _boardGameRental;
+        private readonly BoardGameRentalStore boardGameRentalStore;
 
-        public NavigateBoardGameListCommand(NavigationStore navigationStore,BoardGameRentalViewModel boardGameRental)
+        public NavigateBoardGameListCommand(NavigationStore navigationStore,BoardGameRentalViewModel boardGameRental,BoardGameRentalStore boardGameRentalStore)
         {
             _navigationStore = navigationStore;
             _boardGameRental = boardGameRental;
+            this.boardGameRentalStore = boardGameRentalStore;
         }
         public override void Execute(object parameter)
         {
-            _navigationStore.CurrentViewModel = new ListOfBoardGamesViewModel(_navigationStore, _boardGameRental);
+            _navigationStore.CurrentViewModel = new ListOfBoardGamesViewModel(_navigationStore, _boardGameRental, boardGameRentalStore);
         }
     }
 }

@@ -12,11 +12,13 @@ namespace BoardGameRentalApp.Core.Models
         public string IAvailable { get; set; } = "Yes";
         public string Genre;
         public bool IsSelected;
+        public Guid BoardGameId { get; }
 
-        public BoardGameModel(string genre, string boardGameName)
+        public BoardGameModel(Guid boardGameId, string genre, string boardGameName)
         {
             BoardGameName = boardGameName;
             Genre = genre;
+            BoardGameId = boardGameId;
         }
     }
 }

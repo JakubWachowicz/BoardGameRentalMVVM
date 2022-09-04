@@ -9,8 +9,9 @@ namespace BoardGameRentalApp.Core.ViewModels
 {
     public class BoardGameViewModel
     {
-        private readonly BoardGameModel _boardGameModel;
+        public readonly BoardGameModel _boardGameModel;
 
+        public Guid BoardGameId => _boardGameModel.BoardGameId;
         public string BoardGameName => _boardGameModel.BoardGameName;
         public string Genre => _boardGameModel.Genre;
 

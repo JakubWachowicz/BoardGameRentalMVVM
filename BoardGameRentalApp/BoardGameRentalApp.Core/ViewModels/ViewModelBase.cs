@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BoardGameRentallApp.Core.ViewModels
+namespace BoardGameRentalApp.Core.ViewModels
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged = (s,e)=> { };
-        protected void OnPropertChanged(string name)
+        public void OnPropertChanged(string name)
         {
             PropertyChanged(this, new PropertyChangedEventArgs(name));
         }

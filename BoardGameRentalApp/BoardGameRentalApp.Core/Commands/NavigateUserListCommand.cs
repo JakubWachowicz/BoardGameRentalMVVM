@@ -8,20 +8,22 @@ using System.Threading.Tasks;
 
 namespace BoardGameRentalApp.Core.Commands
 {
-    class NavigateUserListCommand : CommandBase
+    class NavigateUserListCommand : Core.AsyncCommandBase
     {
         private readonly NavigationStore _navigationStore;
         private readonly BoardGameRentalViewModel _boardGameRentalViewModel;
+        private readonly BoardGameRentalStore boardGameRentalStore;
 
-
-        public NavigateUserListCommand(NavigationStore navigationStore, BoardGameRentalViewModel boardGameRentalViewModel)
+        public NavigateUserListCommand(NavigationStore navigationStore, BoardGameRentalViewModel boardGameRentalViewModel,BoardGameRentalStore boardGameRentalStore)
         {
             _navigationStore = navigationStore;
             _boardGameRentalViewModel = boardGameRentalViewModel;
+            this.boardGameRentalStore = boardGameRentalStore;
         }
         public override void Execute(object parameter)
         {
-            _navigationStore.CurrentViewModel = new ListOfUsersViewModel(_navigationStore, _boardGameRentalViewModel);
+
+            _navigationStore.CurrentViewModel = new ListOfUsersViewModel(_navigationStore, _boardGameRentalViewModel, boardGameRentalStore);
         }
     
     }

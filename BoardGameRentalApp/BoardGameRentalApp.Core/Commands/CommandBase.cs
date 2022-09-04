@@ -1,4 +1,4 @@
-﻿using BoardGameRentallApp.Core.ViewModels;
+﻿using BoardGameRentalApp.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,17 +8,17 @@ using System.Windows.Input;
 
 namespace BoardGameRentalApp.Core
 {
-    public class CommandBase : ICommand
+    public class AsyncCommandBase : ICommand
     {
         public event EventHandler CanExecuteChanged;
 
 
         public event Action MyAction;
-        public CommandBase()
+        public AsyncCommandBase()
         {
 
         }
-        public  CommandBase(Action myAction)
+        public  AsyncCommandBase(Action myAction)
         {
             MyAction = myAction;
         }

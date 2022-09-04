@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,13 +10,16 @@ namespace BoardGameRentalApp.Core.Models
     public class UserModel
     {
         public string UserName { get; set; }
-        public string UserId { get; set; }
+        public Guid UserId { get; }
         public bool IsSelected { get; set; }
 
-        public UserModel(string userId, string userName)
+
+        public UserModel(Guid userId, string userName)
         {
             UserId = userId;
             UserName = userName;
         }
+
+
     }
 }

@@ -57,4 +57,41 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style x:Key="NavigationBarButton" TargetType="Button">
+        <Setter Property="Margin" Value="0 0 0 0"/>
+        <Setter Property="Foreground" Value="AliceBlue"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Width" Value="230"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+       
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin ="10 0 0 0" Text="{TemplateBinding Content}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button" >
+                            <Border Background="#679676">
+                                <TextBlock  HorizontalAlignment="Left" VerticalAlignment="Center" Margin ="10 0 0 0"  Text="{TemplateBinding Content}"/>
+                            </Border>
+                            
+                            
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Foreground" Value="Black"/>
+            </Trigger>
+        </Style.Triggers>
+                        
+                    
+
+    </Style>
 </ResourceDictionary>
