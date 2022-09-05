@@ -17,7 +17,7 @@ namespace BoardGameRentalApp.Core.ViewModels
 
         public override string ToString()
         {
-            return UserId +" "+ UserName;
+            return   UserName + " "+ UserId.ToString().Substring(0, 4);
         }
 
         public UserViewModel(UserModel userModel)

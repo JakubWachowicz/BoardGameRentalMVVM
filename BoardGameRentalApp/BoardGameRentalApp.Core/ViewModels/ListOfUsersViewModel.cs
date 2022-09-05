@@ -98,7 +98,7 @@ namespace BoardGameRentalApp.Core.ViewModels
 
         public bool AddNewUserCanExecute()
         {
-            return !(UserName.Trim() == string.Empty || UserId.Trim() == string.Empty);
+            return !(UserName.Trim() == string.Empty);
         }
 
         

@@ -22,7 +22,7 @@ namespace BoardGameRentalApp.Core.Commands
            
         }
 
-        public override Task ExecuteAsync(object parameter)
+        public async override Task ExecuteAsync(object parameter)
         { 
 
             var newList = ViewModelBase.BoardGameList.Where(x => x.IsSelected).ToList();
@@ -36,7 +36,7 @@ namespace BoardGameRentalApp.Core.Commands
                 var itemToRemove = boardGameRentalStore._boardGames.SingleOrDefault(x => x.BoardGameName == item.BoardGameName);
                 if(itemToRemove != null)
                 {
-                    return boardGameRentalStore.DeleteBoardGame(itemToRemove);
+                    await boardGameRentalStore.DeleteBoardGame(itemToRemove);
                     
 
                 }
@@ -44,7 +44,7 @@ namespace BoardGameRentalApp.Core.Commands
 
 
             }
-            return null;
+           
 
         }
 

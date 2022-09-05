@@ -17,12 +17,12 @@ namespace BoardGameRentalApp.Core.Commands
        
         public Func<bool> CanExecuteEvent;
         public ListOfUsersViewModel AddNewUserPageViewModel;
-        public BoardGameRentalStore boardGameRentalStore;
+        public BoardGameRentalStore BoardGameRentalStore;
 
 
         public AddNewUserCommand(Func<bool> canExecuteEvent, BoardGameRentalStore boardGameRentalStore, ListOfUsersViewModel addNewUserPageViewModel) 
         {
-            this.boardGameRentalStore = boardGameRentalStore;
+            this.BoardGameRentalStore = boardGameRentalStore;
             CanExecuteEvent = canExecuteEvent;
             AddNewUserPageViewModel = addNewUserPageViewModel;
             AddNewUserPageViewModel.PropertyChanged += OnTextBoxChange;
@@ -48,7 +48,7 @@ namespace BoardGameRentalApp.Core.Commands
             UserModel NewBoardGame = new UserModel(g, AddNewUserPageViewModel.UserName);
             //BoardGameList.Add(NewBoardGame);
             // await ViewModelBase._boardGameRentalViewModel.boardGameRental.AddBoardGameAsync(new BoardGameModel(ViewModelBase.Genre, ViewModelBase.BoardGameName));
-            await boardGameRentalStore.AddUser(NewBoardGame);
+            await BoardGameRentalStore.AddUser(NewBoardGame);
             AddNewUserPageViewModel.OnPropertChanged(nameof(AddNewUserPageViewModel.usersList));
 
             AddNewUserPageViewModel.UserName = string.Empty;

@@ -29,7 +29,7 @@
 
                     <GridView>
 
-                        <GridViewColumn Header="UserId">
+                        <GridViewColumn Header="UserId" Width="60">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
 
@@ -47,14 +47,14 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         
-                        <GridViewColumn Header="Genre">
+                        <GridViewColumn Header="BoardGameName">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding BoardGameName}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header="Genre">
+                        <GridViewColumn Header="RentDate">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding rentalDate}"/>
@@ -75,9 +75,11 @@
             </ListView>
             
             <StackPanel Margin="0 20 0 0" Width="200" HorizontalAlignment="Left">
+                <TextBlock>User</TextBlock>
                 <ComboBox ItemsSource="{Binding boardGameList}" SelectedValue="{Binding Path=SelectedBoardGame}" />
+                <TextBlock>BoardGame</TextBlock>
                 <ComboBox ItemsSource="{Binding userList}" SelectedValue="{Binding Path=SelecteduserViewModel}" />
-                <Button Style="{StaticResource MenuButtonTheme}" Margin="0 10 0 0" Grid.Row="2" Command="{Binding AddNewRental}" Content="Add Renta"/>
+                <Button Style="{StaticResource MenuButtonTheme}" Margin="0 10 0 0" Grid.Row="2" Command="{Binding AddNewRental}" Content="Add Rental"/>
             </StackPanel>
 
 
@@ -89,3 +91,5 @@
 
     </Grid>
 </UserControl>
+
+    
