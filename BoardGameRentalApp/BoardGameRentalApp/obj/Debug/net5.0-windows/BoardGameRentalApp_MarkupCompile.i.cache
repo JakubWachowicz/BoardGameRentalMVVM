@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\wacho\source\repos\FinalnaWersjaPray\BoardGameRentalApp\BoardGameRentalApp\App.xaml
-9469647684
+111136658167
 
-9173265226
+11-720220983
 215-1180678756
-MainWindow.xaml;Styles\ButtonDefoultStyle.xaml;Styles\GridStyle.xaml;Styles\TextBlockStyle.xaml;Themes\Generic.xaml;Views\ListOfBoardGamesView.xaml;Views\ListOfRentalsView.xaml;Views\ListOfUserView.xaml;Views\NavigationBarView.xaml;
+Components\BindablePasswordBox.xaml;MainWindow.xaml;Styles\ButtonDefoultStyle.xaml;Styles\GridStyle.xaml;Styles\TextBlockStyle.xaml;Themes\Generic.xaml;Views\ListOfBoardGamesView.xaml;Views\ListOfRentalsView.xaml;Views\ListOfUserView.xaml;Views\LogInView.xaml;Views\NavigationBarView.xaml;
 
 False
 

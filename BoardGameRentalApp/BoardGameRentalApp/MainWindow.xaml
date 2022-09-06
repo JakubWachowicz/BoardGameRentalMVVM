@@ -21,6 +21,11 @@
             <DataTemplate DataType="{x:Type vms:ListOfRentalsViewModel}">
                 <views:ListOfRentalsView/>
             </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vms:LoginViewModel}">
+                <views:LogInView/>
+            </DataTemplate>
+            
             <DataTemplate DataType="{x:Type vmsC:NavigationBarViewModel}">
                 <views:NavigationBarView/>
             </DataTemplate>

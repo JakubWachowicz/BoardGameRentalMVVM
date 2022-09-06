@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Components\BindablePasswordBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ListOfBoardGamesView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -16,11 +19,17 @@
     <Compile Update="Views\ListOfUserView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\LogInView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\NavigationBarView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Components\BindablePasswordBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -43,6 +52,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ListOfUserView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\LogInView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\NavigationBarView.xaml">

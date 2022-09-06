@@ -40,4 +40,13 @@
     <Folder Include="Controls\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Images\icons8-closed-eye-48.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\icons8-eye-64.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

@@ -53,7 +53,7 @@ namespace BoardGameRentalApp
 
              var _navigationStore = new NavigationStore();
             BoardGameRentalStore boardGameRentalStore = new BoardGameRentalStore(boardGameRentalViewModel.boardGameRental);
-            _navigationStore.CurrentViewModel = new ListOfBoardGamesViewModel(_navigationStore, boardGameRentalViewModel,boardGameRentalStore);
+            _navigationStore.CurrentViewModel = new LoginViewModel(_navigationStore, boardGameRentalViewModel,boardGameRentalStore);
 
             MainWindow = new MainWindow()
             {
