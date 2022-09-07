@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="BoardGameRentalApp.Views.SignUpView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BoardGameRentalApp.Views"
+              xmlns:components="clr-namespace:BoardGameRentalApp.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </UserControl.Resources>
+
+    <Border>
+        
+        <Border Opacity="0.95">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#E4DFDA" Offset="0"/>
+                    <GradientStop Color="#78A9A6" Offset="0.75"/>
+                </LinearGradientBrush>
+
+
+            </Border.Background>
+            <Grid Opacity="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Border  Grid.Column="1" Grid.Row="1" Background="AliceBlue" CornerRadius="25">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="340"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="10*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Row="1" Grid.Column="1"   VerticalAlignment="Top" >
+                            <TextBlock Text="Registration" FontWeight="Bold" FontSize="20" Margin="0 10 0 0 "/>
+                            <TextBlock Text="Username"  Margin="0 30 0 5"/>
+                            <TextBox Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged}" BorderThickness="0 0 0 1" />
+                            <TextBlock Text="Password" Margin="0 30 0 5"/>
+                            <components:BindablePasswordBox  Password="{Binding Password,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
+                            <TextBlock Visibility="Collapsed"/>
+                            <TextBlock Text="Confirm Password" Margin="0 20 0 5"/>
+                            <components:BindablePasswordBox  Password="{Binding ConfirmPassword,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
+                            <Button Style="{StaticResource MenuButtonTheme}" Content="Sign Up" Margin="0 40 0 5" Height="30" Command="{Binding CreateNewAccount}"/>
+
+                            <Button Content="Already have a account?" HorizontalAlignment="Center" Foreground="Gray" Background="Transparent" BorderThickness="0 0 0 1" Command="{Binding Login}"/>
+                        </StackPanel>
+                    </Grid>
+
+
+                </Border>
+
+
+
+
+
+
+
+            </Grid>
+        </Border>
+    </Border>
+   
+</UserControl>
